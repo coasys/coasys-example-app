@@ -1,0 +1,44 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	background-color: rgb(219, 160, 160);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+}
+
+#app {
+	max-width: 1280px;
+	text-align: center;
+}
+
+.main {
+	position: relative;
+}
+
+.mainModal {
+	position: fixed;
+	z-index: 1000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 300px;
+	width: 300px;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	padding: 20px;
+}
