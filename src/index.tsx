@@ -86,18 +86,11 @@ export function App() {
 	}
 
 	useEffect(() => {
-		function sleep(ms) {
-			return new Promise(resolve => setTimeout(resolve, ms));
-		  }
-
 		const run = async () => {
 			console.log('lol', perspective)
 			if (perspective && isConnected) {
 				await perspective.ensureSDNASubjectClass(Event);
-				// await sleep(10000)
-				// console.log('lol 1', await perspective.getSdna())
 				const events = await Event.all(perspective);
-				console.log('lol 2', events)
 				const newEvents = events.map(e => {
 					const event = e;
 
@@ -105,8 +98,6 @@ export function App() {
 					event.end = new Date(Date.parse(event.end))
 					return event
 				})
-
-				// console.log('events', newEvents, await perspective.getSdna())
 
 				setEvents(newEvents)
 			}
